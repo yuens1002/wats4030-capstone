@@ -8,10 +8,12 @@
  * Controller of the wats4030CapstoneApp
  */
 angular.module('wats4030CapstoneApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function($scope, current) {
+    $scope.current = current.query();
+    
+    $scope.refreshCurrent = function() {
+      $scope.current = current.query({
+        location: $scope.location
+      });
+    };
   });
