@@ -8,12 +8,20 @@
  * Controller of the wats4030CapstoneApp
  */
 angular.module('wats4030CapstoneApp')
-  .controller('MainCtrl', function($scope, current) {
+  .controller('MainCtrl', function($scope, current, repsearch) {
     $scope.current = current.query();
+
 
     $scope.refreshCurrent = function() {
       $scope.current = current.query({
         location: $scope.location
       });
     };
+    $scope.repsearch = repsearch.query();
+    $scope.refreshReps = function() {
+      $scope.repsearch = repsearch.query({
+        locate: $scope.lat + $scope.lng
+      });
+    };
+
   });
