@@ -44,54 +44,21 @@
         </label>
 
       <div class="contaner" ng-controller="MainCtrl">
-        <div class="xxphotos" ng-repeat=" repsearch">
-          <p>
-            <button class="btn btn-lg btn-primary" ng-click="refreshCurrent()">Get lon - lat</button>
-          </p>
-          <dl>
-            <dt>Chamber</dt>
-            <dd>{{repsearch.results[0].chamber}}</dd>
-            <dt>Name</dt>
-            <dd>{{repsearch.results[0].first_name}}</dd>
-          </dl>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!--End RepSearch//////////////////////////-->
 
-
-
-
-
-<!-- START Test Reps data
- START Test Reps data
-<div class="jumbotron">
-  <div ng-app class="jumbotron" ng-controller="MainCtrl">
-    <h1>Your Reps {{repsearch.name}}</h1>
-    <p class="lead">
-      <div ng-init="latlng='42.96 -108'">
-        <p>
-          <label for="latlng">locatelat:
-            <input type="text" name="latlng" ng-model="latlng">
-          </label>
-        </p>
-        <p>
-          <button class="btn btn-lg btn-primary" ng-click="refreshCurrent()">Find Reps</button>
-        </p>
-        <dl>
+        <dl ng-repeat="repinfo in repsearch.list" class="reps">
           <dt>Chamber</dt>
-          <dd>{{repsearch.results[0].chamber}}</dd>
+          <dd>{{repinfo.results[0].chamber}}</dd>
           <dt>Name</dt>
           <dd>{{repsearch.results[0].first_name}}</dd>
         </dl>
       </div>
-    </p>
+    </div>
   </div>
 </div>
- END Test Reps data
- END Test Reps data -->
+
+<!--End RepSearch//////////////////////////-->
+
+
 
 <div class="row marketing">
 
