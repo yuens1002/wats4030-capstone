@@ -30,8 +30,43 @@
 <!-- END Test Lat - Long data -->
 <!-- END Test Lat - Long data -->
 
-<!-- START Test Reps data -->
-<!-- START Test Reps data -->
+
+<!--Start RepSearch//////////////////////////-->
+<div class="jumbotron">
+  <div ng-app class="jumbotron" ng-controller="MainCtrl">
+
+    <h1>Your Reps {{repsearch.name}}</h1>
+    <!-- <div ng-if="repsearch.results.length>1" class="contaner"> -->
+    <div ng-init="repsearch">
+
+      <label for="repsearch">Reps:
+          <input type="text" name="repsearch" ng-model="repsearch">
+        </label>
+
+      <div class="contaner" ng-controller="MainCtrl">
+        <div class="xxphotos" ng-repeat=" repsearch">
+          <p>
+            <button class="btn btn-lg btn-primary" ng-click="refreshCurrent()">Get lon - lat</button>
+          </p>
+          <dl>
+            <dt>Chamber</dt>
+            <dd>{{repsearch.results[0].chamber}}</dd>
+            <dt>Name</dt>
+            <dd>{{repsearch.results[0].first_name}}</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--End RepSearch//////////////////////////-->
+
+
+
+
+
+<!-- START Test Reps data
+ START Test Reps data
 <div class="jumbotron">
   <div ng-app class="jumbotron" ng-controller="MainCtrl">
     <h1>Your Reps {{repsearch.name}}</h1>
@@ -55,8 +90,8 @@
     </p>
   </div>
 </div>
-<!-- END Test Reps data -->
-<!-- END Test Reps data -->
+ END Test Reps data
+ END Test Reps data -->
 
 <div class="row marketing">
 

@@ -11,8 +11,20 @@ angular.module('wats4030CapstoneApp')
   .controller('MainCtrl', function($scope, current, repsearch) {
     $scope.current = current.query();
 
+      $scope.refreshCurrent = function() {
+        $scope.current = current.query({
+          location: $scope.location
+        });
+      };
+      
+    $scope.current.$promise.then(function(data) {
+      $scope.repsearch = repsearch.query({
+        lat: data.results, //
+        lon: data.results //
+      });
+    });
 
-    $scope.refreshCurrent = function() {
+  /*  $scope.refreshCurrent = function() {
       $scope.current = current.query({
         location: $scope.location
       });
@@ -22,6 +34,6 @@ angular.module('wats4030CapstoneApp')
       $scope.repsearch = repsearch.query({
         locate: $scope.lat + $scope.lng
       });
-    };
+    };*/
 
   });
