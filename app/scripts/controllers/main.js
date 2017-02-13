@@ -16,24 +16,12 @@ angular.module('wats4030CapstoneApp')
           location: $scope.location
         });
       };
-      
+
     $scope.current.$promise.then(function(data) {
       $scope.repsearch = repsearch.query({
-        lat: data.results, //
-        lon: data.results //
+        lat: data.results[0].geometry.location.lat,
+        lng: data.results[0].geometry.location.lng
       });
     });
-
-  /*  $scope.refreshCurrent = function() {
-      $scope.current = current.query({
-        location: $scope.location
-      });
-    };
-    $scope.repsearch = repsearch.query();
-    $scope.refreshReps = function() {
-      $scope.repsearch = repsearch.query({
-        locate: $scope.lat + $scope.lng
-      });
-    };*/
 
   });
