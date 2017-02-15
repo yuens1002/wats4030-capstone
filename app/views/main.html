@@ -15,7 +15,7 @@
           </label>
         </p>
         <p>
-          <button class="btn btn-lg btn-primary" ng-click="refreshCurrent()">Get lon - lat</button>
+          <button class="btn btn-lg btn-primary" ng-click="refreshCurrent(location)">Get lon - lat</button>
         </p>
         <dl>
           <dt>Lat</dt>
@@ -39,9 +39,7 @@
     <!-- <div ng-if="repsearch.results.length>1" class="contaner"> -->
     <div ng-init="repsearch">
 
-      <label for="repsearch">Reps:
-          <input type="text" name="repsearch" ng-model="repsearch">
-        </label>
+
 
       <div class="container">
 

@@ -15,6 +15,7 @@ angular.module('wats4030CapstoneApp')
     //https://maps.googleapis.com/maps/api/geocode/json?address=:location&key=AIzaSyDHcLJvjxGIE2Z3Hk3jKN2WZhB73fXAt4c
     // Public API here
     return $resource('https://congress.api.sunlightfoundation.com/legislators/locate?latitude=:lat&longitude=:lng', {}, {
+
       query: {
         method: 'GET',
         params: {
