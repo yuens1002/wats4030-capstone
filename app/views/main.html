@@ -5,7 +5,7 @@
 <!-- START Test Lat - Long data -->
 <!-- START Test Lat - Long data -->
 <div class="jumbotron">
-  <div ng-app class="jumbotron" ng-controller="MainCtrl">
+  <div class="jumbotron">
     <h1>Address {{current.name}}</h1>
     <p class="lead">
       <div ng-init="location='xxx1600 Amphitheatre Parkway, Mountain View, CA'">
@@ -33,7 +33,7 @@
 
 <!--Start RepSearch//////////////////////////-->
 <div class="jumbotron">
-  <div ng-app class="jumbotron" ng-controller="MainCtrl">
+  <div class="jumbotron">
 
     <h1>Your Reps {{repsearch.name}}</h1>
     <!-- <div ng-if="repsearch.results.length>1" class="contaner"> -->
@@ -43,13 +43,14 @@
           <input type="text" name="repsearch" ng-model="repsearch">
         </label>
 
-      <div class="contaner" ng-controller="MainCtrl">
+      <div class="container">
 
-        <dl ng-repeat="repinfo in repsearch.list" class="reps">
+        <dl ng-repeat="repinfo in repsearch.results" class="reps">
           <dt>Chamber</dt>
-          <dd>{{repinfo.results[0].chamber}}</dd>
+          <dd>{{repinfo.chamber}}</dd>
           <dt>Name</dt>
-          <dd>{{repsearch.results[0].first_name}}</dd>
+          <dd>{{repinfo.first_name}}</dd>
+          <dd>{{repinfo.last_name}}</dd>
         </dl>
       </div>
     </div>
