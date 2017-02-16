@@ -17,7 +17,7 @@ angular.module('wats4030CapstoneApp')
         });
         $scope.current.$promise.then(function(data) {
           $scope.repsearch = repsearch.query({
-            lat: data.results[0].geometry.location.lat,
+            lat: data.results[0].geometry.location.lat,//This is the Google search
             lng: data.results[0].geometry.location.lng
           });
         });

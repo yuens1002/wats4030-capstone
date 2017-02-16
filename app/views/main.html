@@ -30,31 +30,57 @@
 <!-- END Test Lat - Long data -->
 <!-- END Test Lat - Long data -->
 
-
 <!--Start RepSearch//////////////////////////-->
+<!--Start RepSearch//////////////////////////-->
+<!--////////////////////////////////////
+This note refers to 2 variables that are used in the code below.
+It’s a reminder of how to perform a basic function on a site, looping through data.
+	1) var repinfo
+	2) var varrole
+The data that is returned from the API is turned into an object/objects.
+These objects can be looped through and any data they contain
+can be pulled out to show on the site.
+
+<dl ng-repeat="repinfo in repsearch”…..
+	Contains: repinfo(object) contains everything in repsearch.
+	Means: loop through the object and get all the data.
+  (data I’m interested in will be requested below)
+<dd>{{repinfo.last_name}}….
+	Means: go to repsearch: print out all the values for last name.
+
+There are arrays inside the array repsearch. Some have more data than others.
+Rather than accessing those arrays directly, we’ll create a new variable
+to contain everything in that array, then loop through it.
+
+<dl ng-repeat="varrole in repinfo.roles”….
+	Contains: varrole(object) Contains all the data in the array roles.
+	Means: We’re going to loop through varrole to get data.
+  Specific data will be requested below.
+Pull out some (specific) data:
+<dd>{{varrole.term}}….
+	Means: While we’re looping through repinfo, Let’s also loop through varrole
+  and print out all the data (values) that exist for term
+////////////////////////////////////-->
 <div class="jumbotron">
   <div class="jumbotron">
-
     <h1>Your Reps {{repsearch.name}}</h1>
-    <!-- <div ng-if="repsearch.results.length>1" class="contaner"> -->
     <div ng-init="repsearch">
-
-
-
       <div class="container">
-
-        <dl ng-repeat="repinfo in repsearch.results" class="reps">
-          <dt>Chamber</dt>
-          <dd>{{repinfo.chamber}}</dd>
+        <dl ng-repeat="repinfo in repsearch" class="reps">
           <dt>Name</dt>
-          <dd>{{repinfo.first_name}}</dd>
+          <dd>{{repinfo.last_name}}</dd>
+          <dt>roles</dt>
+          <dl ng-repeat="varrole in repinfo.roles">
+            <!--optional "Transform data" function-->
+            <dd>{{varrole.term}}</dd>
+          </dl>
           <dd>{{repinfo.last_name}}</dd>
         </dl>
       </div>
     </div>
   </div>
 </div>
-
+<!--End RepSearch//////////////////////////-->
 <!--End RepSearch//////////////////////////-->
 
 
