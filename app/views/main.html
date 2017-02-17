@@ -36,7 +36,7 @@
 This note refers to 2 variables that are used in the code below.
 It’s a reminder of how to perform a basic function on a site, looping through data.
 	1) var repinfo
-	2) var varrole
+	2) var role
 The data that is returned from the API is turned into an object/objects.
 These objects can be looped through and any data they contain
 can be pulled out to show on the site.
@@ -52,13 +52,13 @@ There are arrays inside the array repsearch. Some have more data than others.
 Rather than accessing those arrays directly, we’ll create a new variable
 to contain everything in that array, then loop through it.
 
-<dl ng-repeat="varrole in repinfo.roles”….
-	Contains: varrole(object) Contains all the data in the array roles.
-	Means: We’re going to loop through varrole to get data.
+<dl ng-repeat="role in repinfo.roles”….
+	Contains: role(object) Contains all the data in the array roles.
+	Means: We’re going to loop through role to get data.
   Specific data will be requested below.
 Pull out some (specific) data:
-<dd>{{varrole.term}}….
-	Means: While we’re looping through repinfo, Let’s also loop through varrole
+<dd>{{role.term}}….
+	Means: While we’re looping through repinfo, Let’s also loop through role
   and print out all the data (values) that exist for term
 ////////////////////////////////////-->
 <div class="jumbotron">
@@ -68,11 +68,14 @@ Pull out some (specific) data:
       <div class="container">
         <dl ng-repeat="repinfo in repsearch" class="reps">
           <dt>Name</dt>
-          <dd>{{repinfo.last_name}}</dd>
+          <dd>{{repinfo.last_name}} {{repinfo.first_name}}</dd>
           <dt>roles</dt>
-          <dl ng-repeat="varrole in repinfo.roles">
+          <dl ng-repeat="role in repinfo.roles">
             <!--optional "Transform data" function-->
-            <dd>{{varrole.term}}</dd>
+            <dd>Term: {{role.term}}</dd>
+            <dd>Party: {{role.party}}</dd>
+            <dd>Active: {{repinfo.active}}</dd>
+            <dd>Photo: <img ng-src="{{repinfo.photo_url}}"></dd>
           </dl>
           <dd>{{repinfo.last_name}}</dd>
         </dl>
