@@ -77,7 +77,7 @@ RINSE AND REPEATE
 
 <div class="container-fluid">
   <div class="row is-flex">
-    <h1>Your Reps {{repsearch.name}}</h1>
+    <h1>Your Reps</h1>
 
       <div ng-init="repsearch" class="container" style="width:100%">
 
@@ -98,10 +98,10 @@ Upper & Lower are meaningless to the public so we'll translate them here.-->
             <dd> Office Name: {{office.name}}</dd>
             <dd>Address: {{office.address}}</dd>
 
-            <dd>Term: {{role.term}}</dd>
-            <dd>TEST: {{role.term | date : yyyy}}</dd>
-
+            <dl ng-repeat="role in repinfo.roles">
+            <dd>Term of Service: {{role.term | limitTo:4}} - {{role.term | limitTo:-4}}</dd>
           </dl>
+        </dl>
 
         </dl>
       </div>
