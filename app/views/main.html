@@ -98,7 +98,7 @@ Upper & Lower are meaningless to the public so we'll translate them here.-->
             <dd> Office Name: {{office.name}}</dd>
             <dd>Address: {{office.address}}</dd>
 
-            <dl ng-repeat="role in repinfo.roles">
+            <dl ng-repeat="role in repinfo.roles" ng-show="$first">
             <dd>Term of Service: {{role.term | limitTo:4}} - {{role.term | limitTo:-4}}</dd>
           </dl>
         </dl>
