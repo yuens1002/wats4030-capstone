@@ -90,6 +90,7 @@ Upper & Lower are meaningless to the public so we'll translate them here.-->
             <span ng-switch-when="upper">SENATE</span>
           </dd>
           <dd>{{repinfo.last_name}} {{repinfo.first_name}}</dd>
+          <dd>Party: {{repinfo.party}}</dd>
           <dl ng-repeat="office in repinfo.offices">
             <dd>Phone: {{office.phone}}</dd>
             <dd ng-if="office.fax">Fax: {{office.fax}}</dd>
