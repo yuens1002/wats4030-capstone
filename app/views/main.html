@@ -6,16 +6,20 @@
 <!-- START Test Lat - Long data -->
 <div class="jumbotron">
   <div class="jumbotron">
-    <h1>Address {{current.name}}</h1>
+    <h3>Address {{current.name}}</h3>
+    <p> TEST data:</p>
+    <p>1600 Amphitheatre Parkway, Mountain View, CA</p>
+    <p>109 Carolina Ave, Jamaica Plain, MA 02130</p>
+    <p>Seattle University, 12th Avenue, Seattle, WA</p>
     <p class="lead">
       <div ng-init="location='1600 Amphitheatre Parkway, Mountain View, CA'">
         <p>
-          <label for="location">Street Address:
+          <label for="location">To find your repsenatives, put your Street Address in here:
             <input type="text" name="location" ng-model="location">
           </label>
         </p>
         <p>
-          <button class="btn btn-lg btn-primary" ng-click="refreshCurrent(location)">Get lon - lat</button>
+          <button class="btn btn-lg btn-primary" ng-click="refreshCurrent(location)">Show me my Reps</button>
         </p>
         <dl>
           <dt>Lat</dt>
@@ -71,42 +75,37 @@ Data returned from the API : repsearch - (is an array that also contains an arra
 RINSE AND REPEATE
 ////////////////////////////////////-->
 
-<div class="container" style="width: 100%">
-  <div class="box">
+<div class="container-fluid">
+  <div class="row is-flex">
     <h1>Your Reps {{repsearch.name}}</h1>
-    <div ng-init="repsearch">
-      <div class="container">
-        <dl class="col-sm-2 col-lg-4" ng-repeat="repinfo in repsearch">
-          <dd><img ng-src="{{repinfo.photo_url}}"></dd>
 
+      <div ng-init="repsearch" class="container" style="width:100%">
+
+        <dl class="col-sm-6 col-md-4 col-lg-4" ng-repeat="repinfo in repsearch">
+          <dd><img class="img-responsive" ng-src="{{repinfo.photo_url}}"></dd>
+<!--Data supplies chamber: upper or lower to designate House or Senate
+Upper & Lower are meaningless to the public so we'll translate them here.-->
           <dd ng-switch="repinfo.chamber">
             <span ng-switch-when="lower">HOUSE</span>
             <span ng-switch-when="upper">SENATE</span>
           </dd>
-
-          <dd>chamber {{repinfo.chamber}}</dd>
           <dd>{{repinfo.last_name}} {{repinfo.first_name}}</dd>
           <dl ng-repeat="office in repinfo.offices">
             <dd>Phone: {{office.phone}}</dd>
             <dd ng-if="office.fax">Fax: {{office.fax}}</dd>
             <dd ng-if="office.email">email: {{office.email}}</dd>
 
-
-          <dl ng-repeat="role in repinfo.roles">
-            <dd>Term: {{role.term}}</dd>
-            <dd>Party: {{role.party}}</dd>
-            <dd>Active: {{repinfo.active}}</dd>
-          </dl>
             <dd> Office Name: {{office.name}}</dd>
             <dd>Address: {{office.address}}</dd>
+
+            <dd>Term: {{role.term}}</dd>
+            <dd>TEST: {{role.term | date : yyyy}}</dd>
 
           </dl>
 
         </dl>
       </div>
     </div>
-  </div>
-</div>
 
 <!--End RepSearch//////////////////////////-->
 <!--End RepSearch//////////////////////////-->
@@ -115,4 +114,5 @@ RINSE AND REPEATE
 
 <div class="row marketing">
 
+</div>
 </div>
