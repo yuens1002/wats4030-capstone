@@ -92,7 +92,7 @@ Upper & Lower are meaningless to the public so we'll translate them here.-->
           <dd>{{repinfo.last_name}} {{repinfo.first_name}}</dd>
           <dd>Party: {{repinfo.party}}</dd>
           <dl ng-repeat="office in repinfo.offices">
-            <dd>Phone: {{office.phone}}</dd>
+            <dd>Phone: <a href="tel:+1office.phone">{{office.phone}}</a></dd>
             <dd ng-if="office.fax">Fax: {{office.fax}}</dd>
             <dd ng-if="office.email">email: {{office.email}}</dd>
 
