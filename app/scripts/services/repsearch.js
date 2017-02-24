@@ -19,7 +19,7 @@ angular.module('wats4030CapstoneApp')
 //https://congress.api.sunlightfoundation.com/legislators/locate?latitude=:lat&longitude=:lng
 //openstates.org/api/v1/legislators/geo/?lat=35.79&long=-78.78
 
-
+ 
       query: {
         method: 'GET',
         params: {

@@ -19,7 +19,13 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist([
+      // Allow same origin resource loads.
+      'self',
+      // Allow loading from our assets domain.  Notice the difference between * and **.
+      'https://congress.api.sunlightfoundation.com/**'
+    ]);
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
