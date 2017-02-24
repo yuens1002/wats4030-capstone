@@ -118,13 +118,13 @@ Upper & Lower are meaningless to the public so we'll translate them here.-->
 <div class="container-fluid">
   <div class="row is-flex">
     <h1>Your FED Reps</h1>
-
+<!--{{repdata|json}}-->
       <div ng-init="repsearchfed" class="container" style="width:100%">
 
-        <dl class="col-sm-6 col-md-4 col-lg-4" ng-repeat="repinfofed in repsearchfed">
-          <dd><img class="img-responsive" ng-src="{{repinfo.photo_url}}"></dd>
+        <dl class="col-sm-6 col-md-4 col-lg-4" ng-repeat="repinfofed in repdata.results">
 
-          <dd>FED{{repinfofed.last_name}} {{repinfofed.first_name}}</dd>
+
+          <dd>{{repinfofed.last_name}} {{repinfofed.first_name}}</dd>
           <dd>Party: {{repinfo.party}}</dd>
 
 
