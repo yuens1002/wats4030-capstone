@@ -72,6 +72,12 @@ body {
   .container {
     max-width: 730px;
   }
+  .img-responsive{
+    display: block;
+    max-width: 50%;
+    min-width: 50%;
+    height: auto;
+  }
 
   /* Remove the padding we set earlier */
   .header,

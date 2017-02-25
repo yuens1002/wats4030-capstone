@@ -1,3 +1,4 @@
+<body ng-app="wats4030CapstoneApp">
 <div>
   This is Main View
 </div>
@@ -79,7 +80,7 @@ RINSE AND REPEATE
   <div class="row is-flex">
     <h1>Your Reps</h1>
 
-      <div ng-init="repsearch" class="container" style="width:100%">
+      <div ng-init="repsearch" class="container">
 
         <dl class="col-sm-6 col-md-4 col-lg-4" ng-repeat="repinfo in repsearch">
           <dd><img class="img-responsive" ng-src="{{repinfo.photo_url}}"></dd>
@@ -89,14 +90,21 @@ Upper & Lower are meaningless to the public so we'll translate them here.-->
             <span ng-switch-when="lower">HOUSE</span>
             <span ng-switch-when="upper">SENATE</span>
           </dd>
-          <dd>{{repinfo.last_name}} {{repinfo.first_name}}</dd>
-          <dd>Party: {{repinfo.party}}</dd>
+          <dd>{{repinfo.first_name}} {{repinfo.last_name}}
+
+          <span ng-if="repinfo.party === 'Democratic'">Democrat
+            <dd ng-if="repinfo.party !== 'Democratic'">{{repinfo.party}}
+            </dd>
+          </span>
+</dd>
+
           <dl ng-repeat="office in repinfo.offices">
             <dd>Phone: <a href="tel:+1{{office.phone}}">{{office.phone}}</a></dd>
             <dd ng-if="office.fax">Fax: {{office.fax}}</dd>
             <dd ng-if="office.email">email: {{office.email}}</dd>
+            <p></p>
 
-            <dd> Office Name: {{office.name}}</dd>
+            <dd> {{office.name}}</dd>
             <dd>Address: {{office.address}}</dd>
 
             <dl ng-repeat="role in repinfo.roles" ng-show="$first">
@@ -123,7 +131,8 @@ Upper & Lower are meaningless to the public so we'll translate them here.-->
 
         <dl class="col-sm-6 col-md-4 col-lg-4" ng-repeat="repinfofed in repdata.results">
 
-
+          <dd><img class="img-responsive" ng-src="https://raw.githubusercontent.com/unitedstates/images/gh-pages/congress/225x275/{{repinfofed.bioguide_id}}.jpg">
+          </dd>
           <dd>{{repinfofed.last_name}} {{repinfofed.first_name}}</dd>
           <dd>Party: {{repinfo.party}}</dd>
 
@@ -141,3 +150,4 @@ Upper & Lower are meaningless to the public so we'll translate them here.-->
 <div class="row marketing">
 
 </div>
+</body>
