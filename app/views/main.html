@@ -17,7 +17,7 @@
           <p>
             <button class="btn btn-lg btn-primary" ng-click="refreshCurrent(location)">Show me my Reps</button>
           </p>
-        <!--  <dl>
+          <!--  <dl>
             <dt>Lat</dt>
             <dd>{{current.results[0].geometry.location.lat}}</dd>
             <dt>Lng</dt>
@@ -132,7 +132,10 @@ Upper & Lower are meaningless to the public so we'll translate them here.-->
           <dd>Ph: <a href="tel:+1{{repinfofed.phone}}">{{repinfofed.phone}}</a></dd>
           <dd ng-if="repinfofed.fax">Fx: {{repinfofed.fax}}</dd>
           <dd ng-if="repinfofed.oc_email">email: {{repinfofed.oc_email}}</dd>
-
+          <p></p>
+          <dd>{{repinfofed.office}}</dd>
+          <dd>Term of Service {{repinfofed.term_start}},  {{repinfofed.term_end}}
+          </dd>
         </dl>
       </div>
     </div>
