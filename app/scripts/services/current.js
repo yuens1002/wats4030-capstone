@@ -18,7 +18,7 @@ angular.module('wats4030CapstoneApp')
       query: {
         method: 'GET',
         params: {
-          location: '1600+Amphitheatre+Parkway,+Mountain+View,+CA'
+          location: 'Seattle University, 12th Avenue, Seattle, WA'
         },
         isArray: false
       }
