@@ -6,28 +6,20 @@
     <div class="jum">
 
       <p class="lead">
-        <div ng-init="location='Seattle University, 12th Avenue, Seattle, WA'">
+        <div ng-init="location=''">
           <p>
-            <div>Call your represenatives, after all they work for you (and me). Be kind and polite;
-              call to tell them you'd like them to do or stop doing something. Call to thank them
-              for something they've done. If they are doing something you approve of, they need to know.
-              Encourage them to keep it up!
-              Call once a week, it's not that many calls; this way you can help steer our government before
-              things get further out of hand.
+            <div>Call your represenatives, after all they work for you (and me). Be kind and polite; call to tell them you'd like them to do or stop doing something. Call to thank them for something they've done. If they are doing something you approve of,
+              they need to know. Encourage them to keep it up! Call once a week, it's not that many calls; this way you can help steer our government before things get further out of hand.
             </div>
             <label for="location">To find your repsenatives, put your Street Address in here:
-            <p></p>
-
             <input type="text" name="location" ng-model="location">
+            <span class="wrappable">
+            Then click the button: <button class="btn btn-lg btn-primary" ng-click="refreshCurrent(location)">Show me my Reps</button>
+          </span>
           </label>
           </p>
-          <p>
-            <button class="btn btn-lg btn-primary" ng-click="refreshCurrent(location)">Show me my Reps</button>
-          </p>
           You can call your reps by simply clicking on the phone numbers!
-          <p>
 
-          </p>
           <!--  <dl>
             <dt>Lat</dt>
             <dd>{{current.results[0].geometry.location.lat}}</dd>
@@ -145,7 +137,7 @@ Upper & Lower are meaningless to the public so we'll translate them here.-->
           <dd ng-if="repinfofed.oc_email">email: {{repinfofed.oc_email}}</dd>
           <p></p>
           <dd>{{repinfofed.office}}</dd>
-          <dd>Term of Service {{repinfofed.term_start}},  {{repinfofed.term_end}}
+          <dd>Term of Service {{repinfofed.term_start}}, {{repinfofed.term_end}}
           </dd>
         </dl>
       </div>
