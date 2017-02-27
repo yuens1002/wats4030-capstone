@@ -12,7 +12,7 @@
               they need to know. Encourage them to keep it up! Call once a week, it's not that many calls; this way you can help steer our government before things get further out of hand.
             </div>
             <label for="location">To find your repsenatives, put your Street Address in here:
-            <input type="text" name="location" ng-model="location">
+            <input type="text" name="location" ng-model="location" value="Seattle University, 12th Avenue, Seattle, WA">
             <span class="wrappable">
             Then click the button: <button class="btn btn-lg btn-primary" ng-click="refreshCurrent(location)">Show me my Reps</button>
           </span>
@@ -74,8 +74,8 @@ Data returned from the API : repsearch - (is an array that also contains an arra
 RINSE AND REPEATE
 ////////////////////////////////////-->
 
-  <div class="container-fluid">
-    <div class="row is-flex">
+  <div class="container-fluid" id="statereps">
+    <div class="row is-flex" id="text">
       <h1>Your Reps</h1>
 
       <div ng-init="repsearch" class="container">
@@ -119,7 +119,7 @@ Upper & Lower are meaningless to the public so we'll translate them here.-->
   <!--Start RepSearchFED//////////////////////////-->
   <!--Start RepSearchFED//////////////////////////-->
 
-  <div class="container-fluid">
+  <div class="container-fluid" id="fedreps">
     <div class="row is-flex">
       <h1>Your FED Reps</h1>
       <!--{{repdata|json}}-->
