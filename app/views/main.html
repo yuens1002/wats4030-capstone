@@ -7,6 +7,8 @@
 
       <p class="lead">
         <div ng-init="location=''">
+          What is "ours" extends beyond your own backyard. This is my land. This land is your land. You can
+          take care of all it's issues by yourself or, we can help those who have been hired to help us - with a couple simple easy phone calls.
           <p>
             <div>Call your represenatives, after all they work for you (and me). Be kind and polite; call to tell them you'd like them to do or stop doing something. Call to thank them for something they've done. If they are doing something you approve of,
               they need to know. Encourage them to keep it up! Call once a week, it's not that many calls; this way you can help steer our government before things get further out of hand.
@@ -108,7 +110,7 @@ Upper & Lower are meaningless to the public so we'll translate them here.-->
             </dl>
           </dl>
 
-        </dl>
+        </dl>You can call your reps by simply clicking on the phone numbers!
       </div>
     </div>
   </div>
@@ -139,13 +141,36 @@ Upper & Lower are meaningless to the public so we'll translate them here.-->
           <dd>{{repinfofed.office}}</dd>
           <dd>Term of Service {{repinfofed.term_start}}, {{repinfofed.term_end}}
           </dd>
-        </dl>
+        </dl>You can call your reps by simply clicking on the phone numbers!
       </div>
     </div>
   </div>
   <!--End RepSearchFED//////////////////////////-->
   <!--End RepSearchFED//////////////////////////-->
+  <div ng-controller="TestController as test">
+      <button class="btn btn-medium font-bold"
+              socialshare
+              socialshare-provider="facebook"
+              socialshare-type="sharer"
+              socialshare-text="720kb"
+              socialshare-url="http://720kb.net"
+              socialshare-popup-height="300"
+              socialshare-popup-width="400"
+              socialshare-trigger="click">
+          <i class="fa fa-facebook"></i> Share on Facebook (sharer)
+      </button>
+      {{test.testValue}}
 
+      <a href="#"
+      socialshare
+      socialshare-provider="twitter"
+      socialshare-text="720kb AngularJS Socialshare"
+      socialshare-hashtags="angularjs, angular-socialshare"
+      socialshare-url="http://720kb.net">
+      Share me
+      </a>
+
+  </div>
 
   <div class="row marketing">
 
